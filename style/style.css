@@ -1,13 +1,15 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
+/* --- CONFIGURAÇÕES GERAIS E NOVAS CORES --- */
 :root {
-    --cor-azul: #005cff;
+    --cor-azul-principal: #005cff;
+    --cor-azul-claro: #58a6ff; /* Novo azul mais claro para detalhes */
     --cor-branco: #ffffff;
-    --cor-preto: #0b0b0b;
-    --cor-cinza: #f0f0f0;
-    --cor-fundo-escuro: #111111;
-    --cor-fundo-item: #1c1c1c;
+    --cor-fundo-escuro: #0f1014; /* Um pouco mais suave que o preto puro */
+    --cor-fundo-item: #1c1d21;
+    --cor-texto-claro: #e0e0e0;
+    --cor-texto-escuro: #1c1d21;
     --cor-whatsapp: #25d366;
     --cor-whatsapp-hover: #128c7e;
+    --sombra-box: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra mais profissional */
 }
 
 * {
@@ -16,154 +18,197 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--cor-preto);
-    color: var(--cor-branco);
-    line-height: 1.6;
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    line-height: 1.7;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--cor-azul);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--cor-azul-principal);
+    font-weight: 900;
 }
 
-.description {
-    max-width: 650px;
-    margin: 0 auto;
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
     font-size: 1.1rem;
 }
 
+/* --- EFEITO DE SEÇÕES ALTERNADAS (CLARO/ESCURO) --- */
+.secao-clara {
+    background-color: var(--cor-branco);
+    color: var(--cor-texto-escuro);
+}
 
-/* --- CABEÇALHO / SEÇÃO PRINCIPAL --- */
+/* --- CABEÇALHO / SEÇÃO PRINCIPAL (HERO) --- */
 .hero {
-    background-color: var(--cor-fundo-escuro);
-    padding: 40px 20px;
+    background: linear-gradient(rgba(15, 16, 20, 0.8), rgba(15, 16, 20, 1)), radial-gradient(ellipse at bottom, var(--cor-azul-principal) 0%, var(--cor-fundo-escuro) 60%);
+    padding: 60px 20px;
     text-align: center;
 }
 
 .hero img.logo {
-    max-width: 350px;
+    max-width: 380px;
     margin-bottom: 30px;
+    filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.3)); /* Efeito de brilho na logo */
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
     margin-bottom: 15px;
+    color: var(--cor-branco);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     max-width: 600px;
-    margin: 0 auto 30px auto;
-    color: var(--cor-cinza);
+    margin: 0 auto 40px auto;
+    color: var(--cor-texto-claro);
 }
 
-/* --- BOTÃO DE WHATSAPP (CTA) --- */
+/* --- BOTÃO DE WHATSAPP (CTA) MELHORADO --- */
 .cta-button {
     display: inline-block;
-    background-color: var(--cor-whatsapp);
+    background-image: linear-gradient(45deg, var(--cor-whatsapp), #1ad161);
     color: var(--cor-branco);
-    padding: 20px 40px;
-    font-size: 1.5rem;
+    padding: 20px 45px;
+    font-size: 1.6rem;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     border-radius: 50px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    border: none;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-    background-color: var(--cor-whatsapp-hover);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
 }
 
-/* --- SEÇÃO DE SERVIÇOS --- */
+/* --- CARDS DE SERVIÇOS E DIFERENCIAIS --- */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     text-align: left;
 }
 
 .service-item {
     background-color: var(--cor-fundo-item);
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 5px solid var(--cor-azul);
-    transition: transform 0.2s ease;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #2a2a2a;
+    box-shadow: var(--sombra-box);
+    transition: all 0.3s ease;
+}
+
+.secao-clara .service-item {
+    background-color: #f9f9f9; /* Fundo do card na seção clara */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .service-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-color: var(--cor-azul-claro);
+}
+
+/* --- ÍCONES --- */
+.service-item i {
+    font-size: 3rem;
+    color: var(--cor-azul-claro);
+    margin-bottom: 20px;
+    display: block; /* Para o margin-bottom funcionar */
+    text-align: center;
 }
 
 .service-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    text-align: center;
+    color: var(--cor-branco);
 }
 
-/* --- SEÇÃO DE DIFERENCIAIS --- */
-#diferenciais {
-    background-color: var(--cor-fundo-escuro);
+.secao-clara .service-item h3 {
+    color: var(--cor-texto-escuro);
+}
+
+.service-item p {
+    text-align: center;
 }
 
 /* --- RODAPÉ --- */
 footer {
-    background-color: var(--cor-preto);
+    background-color: var(--cor-fundo-item);
     text-align: center;
-    padding: 50px 20px;
-    border-top: 2px solid #222;
+    padding: 60px 20px;
+    border-top: 5px solid var(--cor-azul-principal);
 }
 
 footer h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    color: var(--cor-branco);
 }
 
-footer .description {
-    margin-top: 20px;
-    margin-bottom: 40px;
+footer p {
+    max-width: 600px;
+    margin: 20px auto 40px auto;
 }
 
 footer .contato-info {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 15px;
+    color: var(--cor-branco);
 }
 
 footer .slogan {
     font-size: 1.2rem;
-    color: var(--cor-cinza);
+    color: var(--cor-azul-claro);
     font-style: italic;
+    font-family: 'Montserrat', sans-serif;
     margin-top: 30px;
 }
 
 /* --- AJUSTES PARA CELULAR (RESPONSIVO) --- */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .hero img.logo { max-width: 280px; }
-    .cta-button { font-size: 1.2rem; padding: 15px 30px; }
+    h1, .hero h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.2rem; }
+    .hero img.logo { max-width: 250px; }
+    .cta-button { font-size: 1.2rem; padding: 18px 35px; }
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
 }
