@@ -1,0 +1,169 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --cor-azul: #005cff;
+    --cor-branco: #ffffff;
+    --cor-preto: #0b0b0b;
+    --cor-cinza: #f0f0f0;
+    --cor-fundo-escuro: #111111;
+    --cor-fundo-item: #1c1c1c;
+    --cor-whatsapp: #25d366;
+    --cor-whatsapp-hover: #128c7e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--cor-azul);
+}
+
+.description {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+
+/* --- CABEÇALHO / SEÇÃO PRINCIPAL --- */
+.hero {
+    background-color: var(--cor-fundo-escuro);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero img.logo {
+    max-width: 350px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: var(--cor-cinza);
+}
+
+/* --- BOTÃO DE WHATSAPP (CTA) --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-whatsapp);
+    color: var(--cor-branco);
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: var(--cor-whatsapp-hover);
+}
+
+/* --- SEÇÃO DE SERVIÇOS --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.service-item {
+    background-color: var(--cor-fundo-item);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid var(--cor-azul);
+    transition: transform 0.2s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* --- SEÇÃO DE DIFERENCIAIS --- */
+#diferenciais {
+    background-color: var(--cor-fundo-escuro);
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--cor-preto);
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 2px solid #222;
+}
+
+footer h2 {
+    font-size: 2rem;
+}
+
+footer .description {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+footer .contato-info {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+footer .slogan {
+    font-size: 1.2rem;
+    color: var(--cor-cinza);
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* --- AJUSTES PARA CELULAR (RESPONSIVO) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero img.logo { max-width: 280px; }
+    .cta-button { font-size: 1.2rem; padding: 15px 30px; }
+}
